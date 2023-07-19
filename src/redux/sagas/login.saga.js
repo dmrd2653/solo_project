@@ -1,5 +1,4 @@
 import { put, takeLatest } from 'redux-saga/effects';
-import axios from 'axios';
 
 // worker Saga: will be fired on "LOGIN" actions
 function* loginUser(action) {
@@ -7,15 +6,19 @@ function* loginUser(action) {
     // clear any existing error on the login page
     yield put({ type: 'CLEAR_LOGIN_ERROR' });
 
-    const config = {
-      headers: { 'Content-Type': 'application/json' },
-      withCredentials: true,
-    };
-
     // send the action.payload as the body
     // the config includes credentials which
     // allow the server session to recognize the user
-    yield axios.post('/api/user/login', action.payload, config);
+    const response = yield fetch('/api/user/login', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(action.payload),
+    });
+    if (!response.ok) {
+      throw new Error("Network response was not OK");
+    }
 
     // after the user has logged in
     // get the user information from the server
@@ -36,18 +39,14 @@ function* loginUser(action) {
 }
 
 // worker Saga: will be fired on "LOGOUT" actions
-function* logoutUser(action) {
+function* logoutUser() {
   try {
-    const config = {
-      headers: { 'Content-Type': 'application/json' },
-      withCredentials: true,
-    };
-
-    // the config includes credentials which
-    // allow the server session to recognize the user
-    // when the server recognizes the user session
-    // it will end the session
-    yield axios.post('/api/user/logout', config);
+    const response = yield fetch('/api/user/logout', {
+      method: "POST",
+    });
+    if (!response.ok) {
+      throw new Error("Network response was not OK");
+    }
 
     // now that the session has ended on the server
     // remove the client-side user object to let
