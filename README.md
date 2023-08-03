@@ -86,7 +86,6 @@ There are a few videos linked below that show a walkthrough the client and sever
 - [Client Walkthrough](https://vimeo.com/453297124)
 
 Directory Structure:
-
 - `src/` contains the React application
 - `public/` contains static assets for the client-side
 - `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site
