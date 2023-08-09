@@ -6,16 +6,14 @@ CREATE TABLE "user" (
 );
 
 CREATE TABLE "travel_list" (
-	"id" integer PRIMARY KEY,
-	"name" varchar(80) NOT NULL,
-	"user_id" integer REFERENCES "user" (id)
-);
-
-CREATE TABLE "places" (
-	"id" integer PRIMARY KEY,
+	"id" SERIAL PRIMARY KEY,
 	"name" varchar(80) NOT NULL,
 	"location" varchar(80) NOT NULL,
 	"category" varchar(80) NOT NULL,
-	"notes" varchar(120),
-	"list_id" integer REFERENCES "travel_list" (id)
+	"notes" varchar(120),	
+	"user_id" integer REFERENCES "user" (id)
 );
+
+INSERT INTO "travel_list" (name, location, category, notes)
+VALUES ('Musée du Louvre', 'Paris', 'art museum', 
+'Mona Lisa by Leonardo da Vinci');
