@@ -2,13 +2,48 @@ html,
 body,
 #react-root {
   height: 100%;
+  margin: 0;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: 'Fauna One', Georgia, serif;
+}
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0px;
+  font-family: Cinzel, Verdana, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url(/public/bkgrd2.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  animation: change 35s infinite ease-in-out;
 }
 
+@keyframes change {
+  10%
+  {
+    background-image: url(/public/bkgrd2.jpeg);
+  }
+  40%
+  {
+    background-image: url(/public/bkgrd3.jpeg);
+  }
+  60%
+  {
+    background-image: url(/public/bkgrd8.jpeg);
+  }
+  80%
+  {
+    background-image: url(/public/bkgrd4.jpeg);
+  }
+  100%
+  {
+    background-image: url(/public/bkgrd5.jpeg);
+  }
+}
 img {
   display: inline-block;
   max-width: 100%;
@@ -30,10 +65,11 @@ Button
   display: inline-block;
   padding: 10px 20px;
   border-color: #014041;
-  border-width: 1px 1px 3px;
+  border-width: 1px;
   border-radius: 4px;
-  background-color: #00acb0;
+  background-color: deepskyblue;
   color: #f8f8f8;
+  opacity: none;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
@@ -55,8 +91,9 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
-  text-decoration: none;
+  background-color: lightskyblue;
+  border-color: #f8f8f8;
+  color: black;
 }
 
 /* This line makes the "Register" and "Login" buttons look like links */
@@ -97,11 +134,12 @@ Form Treatment
 
 .formPanel {
   box-sizing: border-box;
-  width: 400px;
+  width: 22rem;
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  background-color: snow;
+  opacity: 90%;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }

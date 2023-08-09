@@ -1,5 +1,8 @@
 footer {
-  margin-top: 80px;
-  padding: 20px;
+  margin-top: 5rem;
+  padding: .5rem;
   text-align: center;
+  background-color: snow;
+  opacity: 80%;
+  color: black;
 }
