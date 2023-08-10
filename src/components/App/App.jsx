@@ -16,6 +16,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import './App.css';
+import PlaceForm from '../Form/Form';
 
 function App() {
 
@@ -53,10 +54,15 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
+            exact path="/PlaceForm">
+              <PlaceForm />
+            </ProtectedRoute>
+
+          {/* <ProtectedRoute
               // logged in shows InfoPage else shows LoginPage
             exact path="/info">
-            <InfoPage />
-          </ProtectedRoute>
+            <InfoPage /> 
+          </ProtectedRoute> */}
 
           <Route exact path="/login">
             {user.id ?

@@ -14,9 +14,22 @@ function* fetchAllPlaces() {
     }
 }
 
+function* addNewPlace(action) {
+    try {
+        yield fetch('/api/travel_list', {
+            method: 'POST',
+            body: JSON.stringify(action.payload),
+            headers: {'Content-Type': 'application/json'}
+        });
+        yield put ({ type: 'FETCH_PLACES'})
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 function* placesSaga() {
     yield takeEvery('FETCH_PLACES', fetchAllPlaces);
-
+    yield takeEvery('ADD_PLACE', addNewPlace);
 }
 
 export default placesSaga;
