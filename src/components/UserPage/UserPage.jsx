@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import './UserPage.css';
 
 function UserPage() {
 
-  const user = useSelector((store) => store.user);
+  // const user = useSelector((store) => store.user);
   const places = useSelector((store) => store.places);
   const dispatch = useDispatch();
 
@@ -13,11 +14,11 @@ function UserPage() {
 
 
   return (
-  
+    <>
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <h3>Bucket List</h3>
-      <ul className='container'>
+      {/* <h2>Welcome, {user.username}!</h2> */}
+      <h2>Bucket List</h2>
+      <ul className='flex-container'>
         {places.map(place => {
           return (
             <li key={place.id}>
@@ -27,6 +28,8 @@ function UserPage() {
         })}
       </ul>
     </div>
+  
+    </>
   );
 }
 

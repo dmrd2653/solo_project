@@ -1,8 +1,12 @@
 footer {
-  margin-top: 5rem;
-  padding: .5rem;
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0;
+  padding: 1rem;
   text-align: center;
   background-color: snow;
   opacity: 80%;
   color: black;
+
 }
