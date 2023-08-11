@@ -27,9 +27,21 @@ function* addNewPlace(action) {
     }
 }
 
+function* deletePlace(action) {
+    try {
+        yield fetch(`/api/travel_list/${action.payload}`, {
+            method: 'DELETE'
+        });
+        yield put({ type: 'FETCH_PLACES'})
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 function* placesSaga() {
     yield takeEvery('FETCH_PLACES', fetchAllPlaces);
     yield takeEvery('ADD_PLACE', addNewPlace);
+    yield takeEvery('DELETE_PLACE', deletePlace);
 }
 
 export default placesSaga;

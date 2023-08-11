@@ -16,6 +16,9 @@ function UserPage() {
   const toPlaceForm = () => {
     history.push('/PlaceForm/')
   };
+  const deletePlace = (selectedPlace) => {
+    dispatch({ type: 'DELETE_PLACE', payload: selectedPlace })
+  }
 
   return (
     <>
@@ -27,6 +30,7 @@ function UserPage() {
           return (
             <li key={place.id}>
               <h4>{place.name}</h4>
+              <button onClick={(event) => deletePlace(place.id)}>Remove</button>
             </li>
           )
         })}
