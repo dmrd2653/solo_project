@@ -5,8 +5,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function UserPage() {
 
-  // const user = useSelector((store) => store.user);
-  const places = useSelector((store) => store.places);
+  const places = useSelector((store) => store.places.places);
   const dispatch = useDispatch();
   const history = useHistory();
   useEffect(() => {
@@ -16,26 +15,36 @@ function UserPage() {
   const toPlaceForm = () => {
     history.push('/PlaceForm/')
   };
+  const toInfo = (selectedPlace) => {
+    history.push(`/PlaceInfo/${selectedPlace.id}`);
+  }
+  // const editPlace = (selectedPlace) => {
+  //   dispatch({ type: 'EDIT_PLACE', payload: [selectedPlace.name, 
+  //   selectedPlace.location, selectedPlace.category, selectedPlace.notes]})
+  // };
+
   const deletePlace = (selectedPlace) => {
     dispatch({ type: 'DELETE_PLACE', payload: selectedPlace })
-  }
+  };
+
 
   return (
     <>
     <div className="container">
-      {/* <h2>Welcome, {user.username}!</h2> */}
       <h2>Bucket List</h2>
-      <ul className='flex-container'>
+      <ul>
         {places.map(place => {
           return (
-            <li key={place.id}>
-              <h4>{place.name}</h4>
-              <button onClick={(event) => deletePlace(place.id)}>Remove</button>
-            </li>
-          )
+              <li className='flex-container' key={place.id}>
+                <h4 onClick={(event) => toInfo(place)} 
+                  style={{cursor: "pointer"}}>{place.name}</h4>
+                <button onClick={(event) => editPlace(place.id)}>🖊</button>
+                <button onClick={(event) => deletePlace(place.id)}>Remove</button>
+              </li>
+          );
         })}
       </ul>
-      <div className='container'>
+      <div className="container">
         <button onClick={toPlaceForm}>Add a Place</button>
       </div>
     </div>

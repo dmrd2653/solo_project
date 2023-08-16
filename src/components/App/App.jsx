@@ -17,6 +17,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import './App.css';
 import PlaceForm from '../Form/Form';
+import PlaceInfo from '../PlaceInfo/PlaceInfo';
 
 function App() {
 
@@ -58,11 +59,11 @@ function App() {
               <PlaceForm />
             </ProtectedRoute>
 
-          {/* <ProtectedRoute
+          <ProtectedRoute
               // logged in shows InfoPage else shows LoginPage
-            exact path="/info">
-            <InfoPage /> 
-          </ProtectedRoute> */}
+            exact path="/PlaceInfo/:id">
+            <PlaceInfo /> 
+          </ProtectedRoute>
 
           <Route exact path="/login">
             {user.id ?
