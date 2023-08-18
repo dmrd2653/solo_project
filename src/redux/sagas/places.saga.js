@@ -40,16 +40,18 @@ function* addNewPlace(action) {
     }
 }
 
-// function* editPlace(action) {
-//     try {
-//         yield fetch(`/api/travel_list/${action.payload}`, {
-//             method: 'PUT'
-//         });
-//         yield put({ type: 'FETCH_PLACES'})
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
+function* updatePlace(action) {
+    try {
+        yield fetch(`/api/travel_list/${action.payload.id}`, {
+            method: 'PUT',
+            body: JSON.stringify(action.payload),
+            headers: {'Content-Type': 'application/json'}
+        });
+        yield put({ type: 'FETCH_PLACES'})
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 function* deletePlace(action) {
     try {
@@ -66,8 +68,8 @@ function* placesSaga() {
     yield takeEvery('FETCH_PLACES', fetchAllPlaces);
     yield takeEvery('FETCH_INFO', fetchInfo);
     yield takeEvery('ADD_PLACE', addNewPlace);
-    // yield takeEvery('EDIT_PLACE', editPlace);
-    yield takeEvery('DELETE_PLACE', deletePlace)
+    yield takeEvery('UPDATE_PLACE', updatePlace);
+    yield takeEvery('DELETE_PLACE', deletePlace);
 }
 
 export default placesSaga;

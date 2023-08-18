@@ -15,13 +15,10 @@ function UserPage() {
   const toPlaceForm = () => {
     history.push('/PlaceForm/')
   };
+  
   const toInfo = (selectedPlace) => {
     history.push(`/PlaceInfo/${selectedPlace.id}`);
   }
-  // const editPlace = (selectedPlace) => {
-  //   dispatch({ type: 'EDIT_PLACE', payload: [selectedPlace.name, 
-  //   selectedPlace.location, selectedPlace.category, selectedPlace.notes]})
-  // };
 
   const deletePlace = (selectedPlace) => {
     dispatch({ type: 'DELETE_PLACE', payload: selectedPlace })
@@ -38,7 +35,6 @@ function UserPage() {
               <li className='flex-container' key={place.id}>
                 <h4 onClick={(event) => toInfo(place)} 
                   style={{cursor: "pointer"}}>{place.name}</h4>
-                <button onClick={(event) => editPlace(place.id)}>🖊</button>
                 <button onClick={(event) => deletePlace(place.id)}>Remove</button>
               </li>
           );

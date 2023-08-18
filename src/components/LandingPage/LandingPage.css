@@ -22,3 +22,34 @@
   border-radius: 3px;
 }
 
+body {
+  background-image: url(/public/bkgrd2.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  animation: change 35s infinite ease-in-out;
+}
+
+@keyframes change {
+  10%
+  {
+    background-image: url(/public/bkgrd2.jpeg);
+  }
+  40%
+  {
+    background-image: url(/public/bkgrd3.jpeg);
+  }
+  60%
+  {
+    background-image: url(/public/bkgrd8.jpeg);
+  }
+  80%
+  {
+    background-image: url(/public/bkgrd4.jpeg);
+  }
+  100%
+  {
+    background-image: url(/public/bkgrd5.jpeg);
+  }
+}

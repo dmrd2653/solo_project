@@ -14,36 +14,10 @@ body {
   height: 100%;
   overflow: hidden;
   position: relative;
-  background-image: url(/public/bkgrd2.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  justify-content: center;
-  animation: change 35s infinite ease-in-out;
+
 }
 
-@keyframes change {
-  10%
-  {
-    background-image: url(/public/bkgrd2.jpeg);
-  }
-  40%
-  {
-    background-image: url(/public/bkgrd3.jpeg);
-  }
-  60%
-  {
-    background-image: url(/public/bkgrd8.jpeg);
-  }
-  80%
-  {
-    background-image: url(/public/bkgrd4.jpeg);
-  }
-  100%
-  {
-    background-image: url(/public/bkgrd5.jpeg);
-  }
-}
+
 img {
   display: inline-block;
   max-width: 100%;
@@ -105,20 +79,6 @@ Button
   color: #008183;
 }
 
-.container {
-  text-align: center;
-}
-
-.flex-container {
-  list-style-type: none;
-  background-color: snow;
-  opacity: 80%;
-  border-radius: .3rem;
-  margin: 3rem;
-  padding: .25px;
-
-
-}
 /* --------------------------------------------------------------------------------
 Alert
 -------------------------------------------------------------------------------- */
