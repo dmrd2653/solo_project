@@ -45,18 +45,18 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     })
 });
 
-// router.put('/', rejectUnauthenticated, (req, res) => {
-//   const editQuery = `UPDATE travel_list SET
-//   "name"=$1, "location"=$2, "category"=$3, "notes"=$4
-//   WHERE id=$5`;
-//   pool.query(editQuery, [req.body.name, req.body,location,
-//   req.body.category, req.body.notes])
-//     .then(() => {res.sendStatus(200);
-//     }).catch(err => {
-//       console.log('ERROR: Failed to edit selected values', err);
-//       res.sendStatus(500);
-//     })
-// });
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+  const editQuery = `UPDATE travel_list SET
+  "name"=$1, "location"=$2, "category"=$3, "notes"=$4
+  WHERE id=$5`;
+  pool.query(editQuery, [req.body.name, req.body.location,
+  req.body.category, req.body.notes, req.body.id])
+    .then(() => {res.sendStatus(200);
+    }).catch(err => {
+      console.log('ERROR: Failed to edit selected values', err);
+      res.sendStatus(500);
+    })
+});
 
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
   const deleteQuery = `DELETE FROM travel_list WHERE id=$1`;

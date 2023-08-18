@@ -13,3 +13,7 @@
     display: flex;
 
 }
+
+body {
+    background-image: url(/public/bkgrd3.jpeg);
+}
