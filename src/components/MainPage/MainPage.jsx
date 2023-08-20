@@ -28,7 +28,7 @@ function MainPage() {
   return (
     <div className="container">
       <h2>Bucket List</h2>
-      <div className='table'>
+      <div>
           {places.map(place => {
             return (
                 <div className='flex-container' key={place.id}>
