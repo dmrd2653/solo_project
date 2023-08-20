@@ -1,0 +1,46 @@
+.container {
+    text-align: center;
+}
+
+.delete {
+    border-radius: 4px;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+}
+
+.delete:hover {
+    background-color: lightskyblue;
+}
+
+.flex-container {
+    list-style-type: none;
+    background-color: snow;
+    opacity: 100%;
+    border-radius: .3rem;
+    margin: 0 425px 14px 425px;
+    flex-direction: row;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px 36px 10px 36px;
+}
+
+h2 {
+    margin: 22px 0 22px 0;
+}
+
+.place {
+    cursor: pointer;
+}
+
+.table {
+    position: center;
+    
+}

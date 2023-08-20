@@ -18,7 +18,7 @@ function LandingPage() {
         </div>
         <div className="grid-col new-user">
             <h4>New User?</h4>
-            <button className="btn btn_sizeSm" onClick={onRegister}>
+            <button className="btn" onClick={onRegister}>
               Register
             </button>
         </div>
