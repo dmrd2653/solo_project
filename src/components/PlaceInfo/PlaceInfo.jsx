@@ -15,7 +15,7 @@ function PlaceInfo() {
     };
 
     const back = () => {
-        history.push('/user');
+        history.push('/MainPage');
     }
     
     useEffect(() => {
@@ -35,22 +35,29 @@ function PlaceInfo() {
     }, []);
 
     return (
-        <div>
-            <div className="flex-container">
-                <h3>{info.name}</h3>
-                <p>Location: {info.location}</p>
-                <p>Category: {info.category}</p>
-                <p>Notes: {info.notes}</p>
+        <div className="main-container">
+            <center className="title">
+                <h3>{info.name}</h3> 
+            </center>
+            <div>
+                <div className="info-container">
+                    <p className="place-para">Location: {info.location}</p>
+                    <p className="place-para">Category: {info.category}</p>
+                    <p className="place-para">Notes: {info.notes}</p>
+                </div>
             </div>
-            <div className="flex-container">
-                <button onClick={(event) => updatePlace(info)}>🖊</button>
-                <button>Search for it!</button>
-                <button onClick={back}>Back</button>
-                <UploadWidget />    
-            </div>
-            <div className="flex-container">
+
+            <center>
+                <button className="btn" onClick={(event) => updatePlace(info)}>🖊</button>
+                <br/> <br/> <br/>
+                <a href="https://www.google.com/maps/" className="btn" >Search</a>
+                <br/> <br/> <br/>
+                <button className="btn" onClick={back}>Back</button>
+                {/* <UploadWidget />     */}
+            </center>
+            {/* <div className="flex-container">
                 <div ref={containerRef} style={{ width: '1000px', margin: '3rem' }}></div>
-            </div>
+            </div> */}
         </div>
     )
 }

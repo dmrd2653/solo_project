@@ -26,14 +26,13 @@ function MainPage() {
 
 
   return (
-    <div className="container">
+    <div className="main">
       <h2>Bucket List</h2>
       <div>
           {places.map(place => {
             return (
                 <div className='flex-container' key={place.id}>
-                  <div className='place' onClick={(event) => toInfo(place)}>{place.name}
-                  </div>
+                  <h3 className='place' onClick={(event) => toInfo(place)}>{place.name}</h3>
                   <div>
                   <button className='delete' onClick={(event) => deletePlace(place.id)}>Remove</button>
                   </div>
@@ -41,12 +40,13 @@ function MainPage() {
             );
           })}
       </div>
-      <div>
+      <center>
         <button className='btn' onClick={toPlaceForm}>Add a Place</button>
-      </div>
+        <br/> <br/> 
+      </center>
     </div>
   );
 }
 
-// this allows us to use <App /> in index.js
+
 export default MainPage;

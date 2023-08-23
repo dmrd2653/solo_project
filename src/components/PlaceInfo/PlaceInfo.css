@@ -1,14 +1,30 @@
-.container {
-    text-align: center;
+.info-container {
+    background-color: snow;
+    border-radius: .3rem;
+    display: flow;
+    margin: 0 35rem;
+    padding: 16px 60px;
+    opacity: 90%;
 }
 
-.flex-container {
-    list-style-type: none;
-    background-color: snow;
-    opacity: 80%;
-    border-radius: .3rem;
-    margin: 3rem;
-    padding: .25px;
+.btn-container {
+    margin: 2rem 26.5rem 20rem 26.5rem;
+}
 
+.place-para {
+    padding: 12px;
+}
 
+.main-container {
+    margin-bottom: 2rem;
+    padding: 10px 74px;
+
+}
+
+.title {
+    margin-bottom: 2rem;
+}
+
+a {
+    text-decoration-line: none;
 }

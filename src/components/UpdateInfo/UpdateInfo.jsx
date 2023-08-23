@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
-
+import { TextField } from "@mui/material";
 
 function UpdateInfo() {
     const dispatch = useDispatch();
@@ -15,7 +15,7 @@ function UpdateInfo() {
 
     const update = () => {
         dispatch({ type: 'UPDATE_PLACE', payload: updatedInfo});
-        history.push('/user')
+        history.push('/MainPage')
     };
 
     useEffect(() => {
@@ -23,28 +23,60 @@ function UpdateInfo() {
     }, [id]);
 
     const back = () => {
-        history.push('/user')
+        history.push('/MainPage')
     };
     
     return(
         <>
-        <h2>Update Info for {place.name}</h2>
-        <input type="text" value={updatedInfo.name} placeholder="Name"
-            onChange={(event) => {setUpdatedInfo({ ...updatedInfo, name: event.target.value})}}
-            />
-        <input type="text" value={updatedInfo.location} placeholder="Location"
-            onChange={(event) => {setUpdatedInfo({ ...updatedInfo, location: event.target.value})}}
-            />
-        <input type="text" value={updatedInfo.category} placeholder="Category"
-            onChange={(event) => {setUpdatedInfo({ ...updatedInfo, category: event.target.value})}}
-            />
-        <input type="text" value={updatedInfo.notes} placeholder="Notes"
-            onChange={(event) => {setUpdatedInfo({ ...updatedInfo, notes: event.target.value})}}
-            />
-        <button onClick={update}>Update</button>
-        <br/>
-        <button onClick={back}>Back</button>
-        <br/>
+        <center>
+            <h2>Update Info for {place.name}</h2>
+            <div className="container2">
+                <div className="form-container">
+                    <TextField 
+                    label="Name of Place"
+                    variant="filled"
+                    value={updatedInfo.name}
+                    onChange={(event) => {setUpdatedInfo({ ...updatedInfo, name: event.target.value})}} 
+                    color="success"
+                    />
+                </div>
+
+                <div className="form-container">
+                    <TextField 
+                    label="Name of Location"
+                    variant="filled"
+                    value={updatedInfo.location}
+                    onChange={(event) => {setUpdatedInfo({ ...updatedInfo, location: event.target.value})}} 
+                    color="success"
+                    />
+                </div>
+
+                <div className="form-container">
+                    <TextField 
+                    label="Category"
+                    variant="filled"
+                    value={updatedInfo.category}
+                    onChange={(event) => {setUpdatedInfo({ ...updatedInfo, category: event.target.value})}} 
+                    color="success"
+                    />
+                </div>
+
+                <div className="form-container">
+                    <TextField 
+                    label="Notes"
+                    variant="filled"
+                    value={updatedInfo.notes}
+                    multiline
+                    onChange={(event) => {setUpdatedInfo({ ...updatedInfo, notes: event.target.value})}} 
+                    color="success"
+                    />
+                </div>
+            </div>
+            <br/> <br/>
+                <button className="btn" onClick={update}>Update</button>
+                <br/> <br/> <br/>
+                <button className="btn" onClick={back}>Back</button>
+        </center>
         </>
 
 

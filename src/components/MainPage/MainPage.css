@@ -1,7 +1,7 @@
-.container {
-    text-align: center;
+center {
+    margin-top: 2rem;
+    margin-bottom: 8rem;
 }
-
 .delete {
     border-radius: 4px;
     display: inline-block;
@@ -27,15 +27,21 @@
     margin: 0 425px 14px 425px;
     flex-direction: row;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 36px 10px 36px;
+    padding: 10px 36px;
 }
 
 h2 {
     margin: 22px 0 22px 0;
 }
-
+.main {
+    text-align: center;
+    background-color: snow;
+    border-radius: .3rem;
+    display: contents;
+    padding-bottom: 200px;
+  }
 .place {
     cursor: pointer;
 }

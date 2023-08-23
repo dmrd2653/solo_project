@@ -1,0 +1,21 @@
+.form-container {
+    text-align: center;
+    background-color: snow;
+    border-radius: .3rem;
+    display: flow;
+    width: 22rem;
+    padding: 25px 74px;
+    opacity: 90%;
+}
+  
+.textfield {
+    list-style-type: none;
+    flex-direction: column;
+    display: flex;
+    padding: 25px 60px;
+    opacity: 90%;
+}
+
+.form {
+    margin-bottom: -7rem;
+}

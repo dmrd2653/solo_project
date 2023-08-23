@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
+import { TextField } from "@mui/material";
+import { Typography } from "@mui/material/styles/createTypography";
+import "./Form.css";
 
 function PlaceForm() {
     const dispatch = useDispatch();
@@ -13,32 +15,69 @@ function PlaceForm() {
     const addPlace = () => {
         dispatch({ type: 'ADD_PLACE', payload: newPlace});
         setNewPlace({name: '', location: '', category: '', notes: ''})
-        history.push('/user')
+        history.push('/MainPage')
     };
 
     const back = () => {
-        history.push('/user')
+        history.push('/MainPage')
     };
+
+
     return(
-        <>
-        <h2>Add a Place</h2>
-        <input type="text" value={newPlace.name} placeholder="Name"
-            onChange={(event) => {setNewPlace({ ...newPlace, name: event.target.value})}}
-            />
-        <input type="text" value={newPlace.location} placeholder="Location"
-            onChange={(event) => {setNewPlace({ ...newPlace, location: event.target.value})}}
-            />
-        <input type="text" value={newPlace.category} placeholder="Category"
-            onChange={(event) => {setNewPlace({ ...newPlace, category: event.target.value})}}
-            />
-        <input type="text" value={newPlace.notes} placeholder="Notes"
-            onChange={(event) => {setNewPlace({ ...newPlace, notes: event.target.value})}}
-            />
-        <button onClick={addPlace}>Add</button>
-        <br/>
-        <button onClick={back}>Back</button>
-        <br/>
-        </>
+        <div className="form">
+            <center>
+                <h2>Add a Place</h2>
+
+                <div className="form-container">
+                    <div className="textfield">
+                        <TextField 
+                        label="Name of Place"
+                        variant="filled"
+                        value={newPlace.name}
+                        multiline
+                        onChange={(event) => {setNewPlace({ ...newPlace, name: event.target.value})}} 
+                        color="success"
+                        />
+                    </div>
+
+                    <div className="textfield">
+                        <TextField 
+                        label="Name of Location"
+                        variant="filled"
+                        value={newPlace.location}
+                        onChange={(event) => {setNewPlace({ ...newPlace, location: event.target.value})}} 
+                        color="success"
+                        />
+                    </div>
+
+                    <div className="textfield">
+                        <TextField 
+                        label="Category"
+                        variant="filled"
+                        value={newPlace.category}
+                        onChange={(event) => {setNewPlace({ ...newPlace, category: event.target.value})}} 
+                        color="success"
+                        />
+                    </div>
+
+                    <div className="textfield">
+                        <TextField 
+                        label="Notes"
+                        variant="filled"
+                        value={newPlace.notes}
+                        multiline
+                        onChange={(event) => {setNewPlace({ ...newPlace, notes: event.target.value})}} 
+                        color="success"
+                        />
+                    </div>
+                </div>
+                <br/> <br/>
+
+                <button className="btn" onClick={addPlace}>Add</button>
+                <br/> <br/> <br/>
+                <button className="btn" onClick={back}>Back</button>
+            </center>
+        </div>
 
 
     )
