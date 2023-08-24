@@ -5,6 +5,16 @@ html,
   margin: 0;
 }
 
+.backgrd-img {
+  margin: 0;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-image: url(/public/view.JPG);
+  background-color: black;
+  background-repeat: no-repeat;
+  animation: change 60s infinite ease-in-out;
+}
 
 h1, h2, h3, h4, h5 {
   font-family: 'Fauna One', Georgia, serif;
@@ -13,13 +23,34 @@ body {
   font-family: Cinzel, Verdana, sans-serif;
   height: 100%;
   margin: 0;
-  background-size: cover;
-  background-image: url(/public/bkgrd8.jpeg), url(/public/bkgrd7.jpeg);
-  background-color: black;
-  background-repeat: no-repeat;
   justify-content: center;
 }
-
+@keyframes change{
+  0%
+  {
+      background-image: url(/public/view.JPG);
+  }
+  20%
+  {
+    background-image: url(/public/cathedral.JPG);
+  }
+  40%
+  {
+    background-image: url(/public/riviera.JPG);
+  }
+  60%
+  {
+    background-image: url(/public/paintings.JPG);
+  }
+  80%
+  {
+      background-image: url(/public/venice.JPG);
+  }
+  100%
+  {
+      background-image: url(/public/water.jpeg);
+  }
+}
 img {
   display: inline-block;
   max-width: 100%;
@@ -106,7 +137,7 @@ Form Treatment
 }
 
 .tech {
-  margin: 6rem 24rem 12rem 24rem;
+  margin: 6rem 24rem 18rem 24rem;
   background-color: snow;
   border-radius: .3rem;
   display: flex;
@@ -123,4 +154,8 @@ span {
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+.landing, .register, .login {
+  margin-bottom: 18rem;
 }

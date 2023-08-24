@@ -6,18 +6,19 @@ function LoginPage() {
   const history = useHistory();
 
   return (
-    <div>
+    <div className='login'>
       <LoginForm />
 
-      <center>
+      <center className='new-user'>
+      <h4>New User?</h4>
         <button
           type="button"
-          className="btn btn_asLink"
+          className="btn"
           onClick={() => {
             history.push('/registration');
           }}
         >
-          New User?
+          Register
         </button>
       </center>
     </div>

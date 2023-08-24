@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch, useSelector } from "react-redux";
 import './PlaceInfo.css';
-import UploadWidget from "../UploadWidget/UploadWidget";
-
+// import UploadWidget from "../UploadWidget/UploadWidget";
+// don't forget to import useRef for widget
 function PlaceInfo() {
     const info = useSelector(store => store.places.thisPlace);
     const { id } = useParams();
@@ -22,22 +22,22 @@ function PlaceInfo() {
         dispatch({ type: 'FETCH_INFO', payload: id });
     }, [id]);
 
-    useEffect(() => {
-        if (window && containerRef.current) {
-            window.cloudinary.galleryWidget({
-                container: containerRef.current,
+    // useEffect(() => {
+    //     if (window && containerRef.current) {
+    //         window.cloudinary.galleryWidget({
+    //             container: containerRef.current,
 
-                cloudName: 'dd2jeccca',
+    //             cloudName: 'dd2jeccca',
 
-                mediaAssets: [{ tag: 'solo'}],
-            }).render();
-        }
-    }, []);
+    //             mediaAssets: [{ tag: 'solo'}],
+    //         }).render();
+    //     }
+    // }, []);
 
     return (
         <div className="main-container">
             <center className="title">
-                <h3>{info.name}</h3> 
+                <h2>{info.name}</h2> 
             </center>
             <div>
                 <div className="info-container">

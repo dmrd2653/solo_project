@@ -11,7 +11,7 @@ function LandingPage() {
   };
 
   return (
-    <div className="container">
+    <div className="landing">
       <div className="grid">
         <div className="grid-col">
           <LoginForm />

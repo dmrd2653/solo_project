@@ -30,10 +30,12 @@ function PlaceForm() {
 
                 <div className="form-container">
                     <div className="textfield">
-                        <TextField 
+                        <TextField
+                        size="small" 
                         label="Name of Place"
                         variant="filled"
                         value={newPlace.name}
+                        required
                         multiline
                         onChange={(event) => {setNewPlace({ ...newPlace, name: event.target.value})}} 
                         color="success"
@@ -41,20 +43,24 @@ function PlaceForm() {
                     </div>
 
                     <div className="textfield">
-                        <TextField 
+                        <TextField
+                        size="small" 
                         label="Name of Location"
                         variant="filled"
                         value={newPlace.location}
+                        required
                         onChange={(event) => {setNewPlace({ ...newPlace, location: event.target.value})}} 
                         color="success"
                         />
                     </div>
 
                     <div className="textfield">
-                        <TextField 
+                        <TextField
+                        size="small" 
                         label="Category"
                         variant="filled"
                         value={newPlace.category}
+                        required
                         onChange={(event) => {setNewPlace({ ...newPlace, category: event.target.value})}} 
                         color="success"
                         />
@@ -62,6 +68,7 @@ function PlaceForm() {
 
                     <div className="textfield">
                         <TextField 
+                        size="small"
                         label="Notes"
                         variant="filled"
                         value={newPlace.notes}
